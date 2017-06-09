@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get '/about' => 'home#about'
+  get '/about'   => 'home#about'
+  get '/feed'    => 'home#feed'
+  get '/profile' => 'home#profile'
   
   devise_for :corporates, controllers: { 
     registrations: "corporates/registrations",
