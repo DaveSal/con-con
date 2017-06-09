@@ -18,7 +18,7 @@ class Individuals::SessionsController < Devise::SessionsController
   def after_sign_in_path_for(resource)
     super(resource)
 
-    sign_in_url = '#works'
+    sign_in_url = feed_path
   end
 
   def configure_sign_in_params
