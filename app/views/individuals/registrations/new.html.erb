@@ -1,54 +1,53 @@
-<h2>Регистрация личного профиля</h2>
+<section id="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="block">
+                  <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Регистрация профиля</h2>
+                  <div class="contact-form">
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                            <%= f.text_field :first_name, class: 'form-control', placeholder: 'Имя', autofocus: true %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :first_name, "Имя" %><br />
-    <%= f.text_field :first_name, autofocus: false %>
-  </div>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                            <%= f.text_field :last_name, class: 'form-control', placeholder: 'Фамилия', autofocus: true %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :last_name, "Фамилия" %><br />
-    <%= f.text_field :last_name, autofocus: false %>
-  </div>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                            <%= f.text_field :phone_number, class: 'form-control', placeholder: 'Номер телефона', autofocus: true %>
+                        </div>
+                        
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                            <%= f.email_field :email, class: 'form-control', placeholder: 'Адрес электронной почты', autofocus: true %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :major, "Род деятельности" %><br />
-    <%= f.text_field :major, autofocus: false %>
-  </div>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                            <%= f.text_field :major, class: 'form-control', placeholder: 'Род деятельности', autofocus: true %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :phone_number, "Номер телефона" %><br />
-    <%= f.text_field :phone_number, autofocus: false %>
-  </div>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                            <%= f.text_area :about, class: 'form-control', placeholder: 'О себе', autofocus: true %>
+                        </div>
+                        
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
+                          <%= f.password_field :password, class: 'form-control', placeholder: 'Пароль', autofocus: false %>
+                        </div>           
 
-  <div class="field">
-    <%= f.label :email, "Электронная почтв" %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :about, "Краткая информация о компании" %><br />
-    <%= f.text_area :about, autofocus: false %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, "Пароль" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br/>
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Подтвердите пароль" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Зарегистрироваться" %>
-  </div>
-<% end %>
-
-<%= render "shared/links" %>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
+                          <%= f.password_field :password, class: 'form-control', placeholder: 'Подтверждение пароля', autofocus: false %>
+                        </div>                 
+                        
+                        <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
+                            <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Создать профиль">
+                        </div>                      
+                        
+                      <% end %>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
