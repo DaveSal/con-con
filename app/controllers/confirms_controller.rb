@@ -12,7 +12,6 @@ class ConfirmsController < ApplicationController
     logger.info(response['body'])
 
     if response['error'].blank?
-      byebug
       current_individual.stripe_user_id = response['stripe_user_id']
       current_individual.save!
 
