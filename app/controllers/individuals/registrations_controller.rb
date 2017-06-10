@@ -44,8 +44,18 @@ class Individuals::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     super(resource)
 
+    params = {
+      'scope' => 'read_write',
+      'client_id' => ENV['STRIPE_CONNECT_CLIENT_ID'],
+      'response_type' => 'code',
+      'stripe_user[email]' => current_individual.email,
+      'stripe_user[business_name]' => "#{current_individual.first_name} #{current_individual.last_name}"
+    }
+
     if current_individual.seller == '1'
-      return "https://connect.stripe.com/oauth/authorize?response_type=code&client_id=#{ENV['STRIPE_CONNECT_CLIENT_ID']}&scope=read_write"
+      return URI::HTTP.build(host: 'connect.stripe.com',
+                             path: '/oauth/authorize',
+                             query: params.to_query).to_s
     end
 
     '#about'
