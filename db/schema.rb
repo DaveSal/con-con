@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20170610172202) do
     t.string   "major"
     t.text     "about"
     t.string   "stripe_user_id"
-    t.index ["email"], name: "index_individuals_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_individuals_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_individuals_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_individuals_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "publications", force: :cascade do |t|
