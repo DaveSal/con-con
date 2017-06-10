@@ -32,6 +32,8 @@
                             <%= f.text_area :about, class: 'form-control', placeholder: 'О себе', autofocus: true %>
                         </div>
 
+                        <%= f.file_field :image %>
+
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
                           <%= f.password_field :password, class: 'form-control', placeholder: 'Пароль', autofocus: false %>
                         </div>

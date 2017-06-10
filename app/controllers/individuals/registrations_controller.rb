@@ -34,7 +34,7 @@ class Individuals::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :first_name, :last_name, :phone_number, :major, :about, :seller])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :first_name, :last_name, :phone_number, :major, :about, :seller, :image])
   end
 
   def configure_account_update_params

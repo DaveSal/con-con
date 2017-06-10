@@ -7,7 +7,7 @@
                 <img class="img-responsive" src="<%= image_path 'author/author-bg.jpg' %>">
                 <div class="author-body text-center">
                     <div class="author-img">
-                        <img src="<%= image_path 'author/author.jpg' %>">
+                        <%= image_tag @current_individual.image.url(:thumb) %>
                     </div>
                     <div class="author-bio">
                         <h3><%= "#{current_individual.first_name} #{current_individual.last_name}" %></h3>
