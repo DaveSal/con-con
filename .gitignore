@@ -25,3 +25,4 @@
 config/secrets.yml
 public/assets/.*
 .env*
+public/system
