@@ -22,17 +22,17 @@
                 </div>
             </div>
             <% if current_individual.can_sell? %>
-              <div class="categories widget">
-                  <h3 class="widget-head">Статус работ</h3>
-                  <ul>
-                      <li>
-                          <a href="">Активные</a> <span class="badge"><%= publications.count %></span>
-                      </li>
-                      <li>
-                          <a href="">Проданные</a> <span class="badge"><%= sold_publications.count %></span>
-                      </li>
-                  </ul>
-              </div>
+            <div class="categories widget">
+                <h3 class="widget-head">Статус работ</h3>
+                <ul>
+                    <li>
+                        <a href="" id="activeButton" onclick="event.preventDefault()">Активные</a> <span class="badge"><%= publications.count %></span>
+                    </li>
+                    <li>
+                        <a href="" id="soldButton" onclick="event.preventDefault()">Проданные</a> <span class="badge"><%= sold_publications.count %></span>
+                    </li>
+                </ul>
+            </div>
             <% end %>
         </div>
         </div>
