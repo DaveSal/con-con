@@ -6,7 +6,7 @@ class Publication < ApplicationRecord
   belongs_to :author, class_name: 'Individual'
   belongs_to :buyer, class_name: 'Individual', foreign_key: 'sold_to', optional: true
 
-  default_scope { where(sold_at: nil) }
+  scope :not_sold, -> { where(sold_at: nil) }
 
   scope :sold, -> { where.not(sold_at: nil) }
 
@@ -18,5 +18,9 @@ class Publication < ApplicationRecord
     self.sold_at = Time.zone.now
     self.sold_to = user.id
     save!
+  end
+
+  def sold?
+    sold_to.present?
   end
 end

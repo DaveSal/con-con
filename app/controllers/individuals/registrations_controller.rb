@@ -49,7 +49,8 @@ class Individuals::RegistrationsController < Devise::RegistrationsController
       'client_id' => ENV['STRIPE_CONNECT_CLIENT_ID'],
       'response_type' => 'code',
       'stripe_user[email]' => current_individual.email,
-      'stripe_user[business_name]' => "#{current_individual.first_name} #{current_individual.last_name}"
+      'stripe_user[business_name]' => "#{current_individual.first_name} #{current_individual.last_name}",
+      'redirect_uri' => (Rails.env.production? ? 'http://con-con.me/' : 'http://localhost:8004/') + 'connect/confirm'
     }
 
     if current_individual.seller == '1'

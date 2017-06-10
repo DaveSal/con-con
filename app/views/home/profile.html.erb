@@ -14,26 +14,36 @@
                         <p><strong>Род деятельности:</strong> <%= current_individual.major %></p>
                         <p><strong>О себе:</strong> <%= current_individual.about %></p>
                     </div>
-                    <div class="blog-content">
-                      <%= link_to 'Опубликовать статью', new_publication_path, class: 'btn btn-dafault btn-details' %>
-                    </div>
+                    <% if current_individual.can_sell? %>
+                      <div class="blog-content">
+                        <%= link_to 'Опубликовать статью', new_publication_path, class: 'btn btn-dafault btn-details' %>
+                      </div>
+                    <% end %>
                 </div>
             </div>
-            <div class="categories widget">
-                <h3 class="widget-head">Статус работ</h3>
-                <ul>
-                    <li>
-                        <a href="">Активные</a> <span class="badge"><%= publications.count %></span>
-                    </li>
-                    <li>
-                        <a href="">Проданные</a> <span class="badge"><%= sold_publications.count %></span>
-                    </li>
-                </ul>
-            </div>
+            <% if current_individual.can_sell? %>
+              <div class="categories widget">
+                  <h3 class="widget-head">Статус работ</h3>
+                  <ul>
+                      <li>
+                          <a href="">Активные</a> <span class="badge"><%= publications.count %></span>
+                      </li>
+                      <li>
+                          <a href="">Проданные</a> <span class="badge"><%= sold_publications.count %></span>
+                      </li>
+                  </ul>
+              </div>
+            <% end %>
         </div>
         </div>
         <div class="col-md-8">
+            <br><br>
+            <% if current_individual.can_sell? %>
+              <h1>Мои статьи</h1>
+            <% else %>
+              <h1>Купленные статьи</h1>
+            <% end %>
             <%= render partial: 'shared/publication', collection: publications %>
-        </div>>
+        </div>
     </div>
 </section>

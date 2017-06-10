@@ -7,4 +7,9 @@ class Individual < ApplicationRecord
   attr_accessor :seller
 
   has_many :publications, foreign_key: 'author_id'
+  has_many :bought_publications, foreign_key: 'sold_to', class_name: 'Publication'
+
+  def can_sell?
+    stripe_user_id.present?
+  end
 end
