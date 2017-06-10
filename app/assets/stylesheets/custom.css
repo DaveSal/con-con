@@ -1,3 +1,7 @@
 .fr-element > p {
   height: 400px;
 }
+
+.about-feature .block {
+  width: 50%;
+}
