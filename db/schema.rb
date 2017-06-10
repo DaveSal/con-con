@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608145949) do
+ActiveRecord::Schema.define(version: 20170610115316) do
 
   create_table "corporates", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170608145949) do
     t.string   "phone_number"
     t.string   "major"
     t.text     "about"
+    t.string   "stripe_user_id"
     t.index ["email"], name: "index_individuals_on_email", unique: true
     t.index ["reset_password_token"], name: "index_individuals_on_reset_password_token", unique: true
   end

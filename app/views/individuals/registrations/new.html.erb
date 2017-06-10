@@ -19,7 +19,7 @@
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
                             <%= f.text_field :phone_number, class: 'form-control', placeholder: 'Номер телефона', autofocus: true %>
                         </div>
-                        
+
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
                             <%= f.email_field :email, class: 'form-control', placeholder: 'Адрес электронной почты', autofocus: true %>
                         </div>
@@ -31,19 +31,24 @@
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
                             <%= f.text_area :about, class: 'form-control', placeholder: 'О себе', autofocus: true %>
                         </div>
-                        
+
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
                           <%= f.password_field :password, class: 'form-control', placeholder: 'Пароль', autofocus: false %>
-                        </div>           
+                        </div>
 
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
                           <%= f.password_field :password, class: 'form-control', placeholder: 'Подтверждение пароля', autofocus: false %>
-                        </div>                 
-                        
+                        </div>
+
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
+                          <%= f.check_box :seller, class: 'form-control', autofocus: false %>
+                          <%= f.label :seller, 'Буду продавать', autofocus: false %>
+                        </div>
+
                         <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
                             <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Создать профиль">
-                        </div>                      
-                        
+                        </div>
+
                       <% end %>
                   </div>
                 </div>

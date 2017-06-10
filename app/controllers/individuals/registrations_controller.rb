@@ -34,7 +34,7 @@ class Individuals::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :first_name, :last_name, :phone_number, :major, :about])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :first_name, :last_name, :phone_number, :major, :about, :seller])
   end
 
   def configure_account_update_params
@@ -44,7 +44,11 @@ class Individuals::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     super(resource)
 
-    sign_up_url = '#about'
+    if current_individual.seller == '1'
+      return "https://connect.stripe.com/oauth/authorize?response_type=code&client_id=#{ENV['STRIPE_CONNECT_CLIENT_ID']}&scope=read_write"
+    end
+
+    '#about'
   end
 
   def after_inactive_sign_up_path_for(resource)
