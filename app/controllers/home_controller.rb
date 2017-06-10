@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   end
 
   def profile
-    publications = current_individual.publications.order(created_at: 'desc')
+    publications = current_individual.publications.unscoped.order(created_at: 'desc')
 
     render locals: { publications: publications }
   end
