@@ -7,6 +7,7 @@ require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'capistrano/puma'
 require 'capistrano/secrets_yml'
+require 'capistrano/linked_files'
 
 install_plugin Capistrano::Puma
 

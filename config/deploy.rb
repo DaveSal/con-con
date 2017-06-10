@@ -24,6 +24,7 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
+set :linked_files, %w(.env.production)
 
 ## Defaults:
 # set :scm,           :git
@@ -76,6 +77,7 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
+  before :finishing,    'linked_files:upload_files'
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
