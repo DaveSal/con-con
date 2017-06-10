@@ -8,12 +8,12 @@ function changePublicationsVisibility() {
   var soldDiv = document.querySelector('#sold');
 
   function showActivePublications() {
-    this.style.display = 'block';
+    activeDiv.style.display = 'block';
     soldDiv.style.display = 'none';
   }
 
   function showSoldPublications() {
-    this.style.display = 'block';
+    soldDiv.style.display = 'block';
     activeDiv.style.display = 'none';
   }
 
@@ -21,4 +21,14 @@ function changePublicationsVisibility() {
   if (soldButton) soldButton.addEventListener('click', showSoldPublications);
 }
 
+function dateToLocaleRu() {
+  var publicationDateString = document.querySelector('#publication-date').innerHTML;
+  var publicationDate = new Date(publicationDateString);
+
+  var options = { day: 'numeric', month: 'long', year: 'numeric' };
+
+  document.querySelector('#publication-date').innerHTML = publicationDate.toLocaleString('ru-RU', options);
+}
+
 changePublicationsVisibility();
+dateToLocaleRu();

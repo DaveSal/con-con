@@ -7,7 +7,7 @@
         <a href="<%= publication_path(publication.id) %>"><%= publication.title %></a>
         </h2>
         <div class="blog-meta">
-            <span><%= publication.created_at %></span>
+            <span id="publication-date"><%= publication.created_at %></span>
             <span>автор 
                 <%= "#{publication.author.first_name} #{publication.author.last_name}"%>
             </span>
