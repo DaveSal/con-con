@@ -23,17 +23,20 @@
                 <h3 class="widget-head">Статус работ</h3>
                 <ul>
                     <li>
-                        <a href="">Активные</a> <span class="badge"><%= publications.count %></span>
+                        <a href="" id="activeButton" onclick="event.preventDefault()">Активные</a> <span class="badge"><%= publications.count %></span>
                     </li>
                     <li>
-                        <a href="">Проданные</a> <span class="badge"><%= sold_publications.count %></span>
+                        <a href="" id="soldButton" onclick="event.preventDefault()">Проданные</a> <span class="badge"><%= sold_publications.count %></span>
                     </li>
                 </ul>
             </div>
         </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" id="active">
             <%= render partial: 'shared/publication', collection: publications %>
-        </div>>
+        </div>
+        <div class="col-md-8" id="sold" style="display: none">
+            <%= render partial: 'shared/publication', collection: sold_publications %>
+        </div>
     </div>
 </section>

@@ -58,7 +58,7 @@ class Individuals::RegistrationsController < Devise::RegistrationsController
                              query: params.to_query).to_s
     end
 
-    '#about'
+    sign_up_url = feed_path
   end
 
   def after_inactive_sign_up_path_for(resource)
