@@ -14,6 +14,9 @@
                         <p><strong>Род деятельности:</strong> <%= current_individual.major %></p>
                         <p><strong>О себе:</strong> <%= current_individual.about %></p>
                     </div>
+                    <div class="blog-content">
+                      <%= link_to 'Опубликовать статью', new_publication_path, class: 'btn btn-dafault btn-details' %>
+                    </div>
                 </div>
             </div>
             <div class="categories widget">
