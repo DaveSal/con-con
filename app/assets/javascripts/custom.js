@@ -22,12 +22,13 @@ function changePublicationsVisibility() {
 }
 
 function dateToLocaleRu() {
-  var publicationDateString = document.querySelector('#publication-date').innerHTML;
+  var publicationDateTag = document.querySelector('#publication-date');
+  if (publicationDateTag) var publicationDateString = publicationDateTag.innerHTML;
   var publicationDate = new Date(publicationDateString);
 
   var options = { day: 'numeric', month: 'long', year: 'numeric' };
 
-  document.querySelector('#publication-date').innerHTML = publicationDate.toLocaleString('ru-RU', options);
+  if (publicationDateString) document.querySelector('#publication-date').innerHTML = publicationDate.toLocaleString('ru-RU', options);
 }
 
 changePublicationsVisibility();
