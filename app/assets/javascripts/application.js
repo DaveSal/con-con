@@ -8,4 +8,5 @@
 //= require jquery.fancybox.js
 //= require main.js
 //= require custom.js
+//= require froala_editor.min.js
 //= require_tree .
