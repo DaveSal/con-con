@@ -5,14 +5,11 @@ class PublicationsController < ApplicationController
   end
 
   def new
-    @publication = Publication.new
+    @publication = current_individual.publications.build
   end
 
   def create
-    byebug
-    @publication = Publication.new(publications_params)
-    @publication.author = current_individual
-    byebug
+    @publication = current_individual.publications.build(publications_params)
 
     if @publication.save
       redirect_to @publication

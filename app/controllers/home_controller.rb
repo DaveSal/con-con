@@ -8,8 +8,14 @@ class HomeController < ApplicationController
   end
 
   def feed
+    publications = Publication.all.order(created_at: 'desc')
+
+    render locals: { publications: publications }
   end
 
   def profile
+    publications = current_individual.publications.order(created_at: 'desc')
+
+    render locals: { publications: publications }
   end
 end

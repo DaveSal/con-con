@@ -1,0 +1,20 @@
+<article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+    <div class="blog-post-image">
+        <a href="post-fullwidth.html"><img class="img-responsive" src="<%= image_path 'blog/post-1.jpg'%>" alt="" /></a>
+    </div>
+    <div class="blog-content">
+        <h2 class="blogpost-title">
+        <a href="post-fullwidth.html"><%= publication.title %></a>
+        </h2>
+        <div class="blog-meta">
+            <span><%= publication.created_at %></span>
+            <span>автор 
+                <%= "#{publication.author.first_name} #{publication.author.last_name}"%>
+            </span>
+        </div>
+        <p>
+            <%= publication.content %>
+        </p>
+        <a href="<%= publication_path(publication.id)%>" class="btn btn-dafault btn-details">Читать подробнее</a>
+    </div>
+</article>

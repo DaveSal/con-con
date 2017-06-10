@@ -5,3 +5,11 @@
 .about-feature .block {
   width: 50%;
 }
+
+.author-bio {
+  text-align: left;
+}
+
+.author-bio > h3 {
+  text-align: center;
+}

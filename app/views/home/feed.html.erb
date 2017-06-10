@@ -7,90 +7,10 @@ Global Page Section Start
 <div class="row">
     <div class="col-md-4">
         <div class="sidebar">
-            <div class="search widget">
-                <form action="" method="get" class="searchform" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Введите слово для поиска...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button"> <i class="ion-search"></i> </button>
-                        </span>
-                        </div><!-- /input-group -->
-                    </form>
-                </div>
-                <div class="categories widget">
-                    <h3 class="widget-head">Категории</h3>
-                    <ul>
-                        <li>
-                            <a href="">Статьи</a> <span class="badge">1</span>
-                        </li>
-                        <li>
-                            <a href="">Фото</a> <span class="badge">2</span>
-                        </li>
-                        <li>
-                            <a href="">Видео</a> <span class="badge">4</span>
-                        </li>   
-                    </ul>
-                </div>
             </div>
         </div>
         <div class="col-md-8">
-            <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
-                <div class="blog-post-image">
-                    <a href="post-fullwidth.html"><img class="img-responsive" src="<%= image_path 'blog/post-1.jpg' %>" alt="" /></a>
-                </div>
-                <div class="blog-content">
-                    <h2 class="blogpost-title">
-                    <a href="post-fullwidth.html">Space shouldn’t be the final frontier</a>
-                    </h2>
-                    <div class="blog-meta">
-                        <span>Dec 11, 2020</span>
-                        <span>by <a href="">Admin</a></span>
-                        <span><a href="">business</a>,<a href="">people</a></span>
-                    </div>
-                    <p>Ultrices posuere cubilia curae curabitur sit amet tortor ut massa commodo. Vestibulum consectetur euismod malesuada tincidunt cum. Sed ullamcorper dignissim consectetur ut tincidunt eros sed sapien consectetur dictum. Pellentesques sed volutpat ante, cursus port. Praesent mi magna, penatibus et magniseget dis parturient montes sed quia consequuntur magni dolores eos qui ratione.
-                    </p>
-                    <a href="single-post.html" class="btn btn-dafault btn-details">Подробнее</a>
-                    <a href="single-post.html" class="btn btn-dafault btn-details">Купить</a>
-                </div>
-            </article>
-            <article class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">
-                <div class="blog-post-image">
-                    <a href="post-fullwidth.html"><img class="img-responsive" src="<%= image_path 'blog/post-2.jpg' %>" alt="" /></a>
-                </div>
-                <div class="blog-content">
-                    <h2 class="blogpost-title">
-                    <a href="post-fullwidth.html">Space shouldn’t be the final frontier</a>
-                    </h2>
-                    <div class="blog-meta">
-                        <span>Dec 11, 2020</span>
-                        <span>by <a href="">Admin</a></span>
-                        <span><a href="">business</a>,<a href="">people</a></span>
-                    </div>
-                    <p>Ultrices posuere cubilia curae curabitur sit amet tortor ut massa commodo. Vestibulum consectetur euismod malesuada tincidunt cum. Sed ullamcorper dignissim consectetur ut tincidunt eros sed sapien consectetur dictum. Pellentesques sed volutpat ante, cursus port. Praesent mi magna, penatibus et magniseget dis parturient montes sed quia consequuntur magni dolores eos qui ratione.
-                    </p>
-                    <a href="single-post.html" class="btn btn-dafault btn-details">Подробнее</a>
-                    <a href="single-post.html" class="btn btn-dafault btn-details">Купить</a>
-                </div>
-            </article>
-            <article class="wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">
-                <div class="blog-post-image">
-                    <a href="post-fullwidth.html"><img class="img-responsive" src="<%= image_path 'blog/post-3.jpg' %>" alt="" /></a>
-                </div>
-                <div class="blog-content">
-                    <h2 class="blogpost-title">
-                    <a href="post-fullwidth.html">Space shouldn’t be the final frontier</a>
-                    </h2>
-                    <div class="blog-meta">
-                        <span>Dec 11, 2020</span>
-                        <span>by <a href="">Admin</a></span>
-                        <span><a href="">business</a>,<a href="">people</a></span>
-                    </div>
-                    <p>Ultrices posuere cubilia curae curabitur sit amet tortor ut massa commodo. Vestibulum consectetur euismod malesuada tincidunt cum. Sed ullamcorper dignissim consectetur ut tincidunt eros sed sapien consectetur dictum. Pellentesques sed volutpat ante, cursus port. Praesent mi magna, penatibus et magniseget dis parturient montes sed quia consequuntur magni dolores eos qui ratione.
-                    </p>
-                    <a href="single-post.html" class="btn btn-dafault btn-details">Подробнее</a>
-                    <a href="single-post.html" class="btn btn-dafault btn-details">Купить</a>
-                </div>
-            </article>
+            <%= render partial: 'shared/publication', collection: publications %>
         </div>
     </div>
 </section>

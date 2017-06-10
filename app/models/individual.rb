@@ -5,4 +5,6 @@ class Individual < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessor :seller
+
+  has_many :publications, foreign_key: 'author_id'
 end
