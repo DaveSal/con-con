@@ -1,12 +1,11 @@
-<form action="<%= payments_path %>" method="POST">
-<script
-  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-  data-key="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>"
-  data-amount="<%= publication.price * 100 %>"
-  data-name="<%= publication.title %>"
-  data-description="<%= "ВСТАВИТЬ ИМЯ АВТОРА" %>"
-  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-  data-locale="auto"
-  data-email="<%= current_individual.email %>">
-</script>
-</form>
+<%= form_tag payments_path(publication: publication.id) do %>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>"
+          data-amount="<%= publication.price_in_cents %>"
+          data-name="<%= publication.title %>"
+          data-description="<%= "ВСТАВИТЬ ИМЯ АВТОРА" %>"
+          data-locale="auto"
+          data-email="<%= current_individual.email %>"
+          data-panel-label="Оплатить"
+          data-allow-remember-me="false"></script>
+<% end %>
