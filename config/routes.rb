@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/about'   => 'home#about'
   get '/feed'    => 'home#feed'
   get '/profile' => 'home#profile'
+
+  resources :publications
   
   devise_for :corporates, controllers: { 
     registrations: "corporates/registrations",
