@@ -23,4 +23,5 @@
 
 # Ignore yml-file with secret keys
 config/secrets.yml
+public/assets/.*
 .env*
