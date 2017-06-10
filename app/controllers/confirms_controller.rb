@@ -15,7 +15,7 @@ class ConfirmsController < ApplicationController
       current_individual.stripe_user_id = response['stripe_user_id']
       current_individual.save!
 
-      redirect_to root_path
+      redirect_to profile_path
 
       return
     end

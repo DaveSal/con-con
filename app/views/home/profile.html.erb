@@ -40,8 +40,14 @@
             <br><br>
             <% if current_individual.can_sell? %>
               <h1>Мои статьи</h1>
+              <% if !publications.any? %>
+                Вы еще не добавили ни одной статьи. Нажмите на кнопку "Опубликовать статью" для того, чтобы приступить.
+              <% end %>
             <% else %>
               <h1>Купленные статьи</h1>
+              <% if !publications.any? %>
+                Вы еще не купили ни одной статьи. Перейдите в <a href="<%= feed_path %>">каталог</a>, для того, чтобы начать.
+              <% end %>
             <% end %>
             <%= render partial: 'shared/publication', collection: publications %>
         </div>
