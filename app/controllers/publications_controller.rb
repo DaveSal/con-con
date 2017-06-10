@@ -9,6 +9,12 @@ class PublicationsController < ApplicationController
   def create
   end
 
+  def show
+    publication = Publication.find(params[:id])
+
+    render locals: { publication: publication }
+  end
+
   private
 
   def publications_params

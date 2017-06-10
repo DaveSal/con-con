@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   resource :connect do
     resource :confirm
   end
+
+  resources :publications
+
+  resources :payments
 end
