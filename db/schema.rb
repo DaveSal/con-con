@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170608145949) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "corporates", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -29,8 +32,8 @@ ActiveRecord::Schema.define(version: 20170608145949) do
     t.string   "phone_number"
     t.string   "representer"
     t.text     "about"
-    t.index ["email"], name: "index_corporates_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_corporates_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_corporates_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_corporates_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "individuals", force: :cascade do |t|
@@ -51,8 +54,8 @@ ActiveRecord::Schema.define(version: 20170608145949) do
     t.string   "phone_number"
     t.string   "major"
     t.text     "about"
-    t.index ["email"], name: "index_individuals_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_individuals_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_individuals_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_individuals_on_reset_password_token", unique: true, using: :btree
   end
 
 end
