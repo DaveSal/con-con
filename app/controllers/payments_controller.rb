@@ -16,6 +16,12 @@ class PaymentsController < ApplicationController
 
     charge = Stripe::Charge
              .create(*charge_params)
+
+    publication.sold!(current_individual)
+
+    flash[:notice] = "Поздравляем! Все права на статью <strong>\"#{publication.title}\"</strong> теперь принадлежат вам."
+
+    redirect_to feed_path
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to payments_path(publication: publication.id)
