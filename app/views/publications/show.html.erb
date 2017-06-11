@@ -1,4 +1,3 @@
-<%= render 'shared/payment_form', { publication: publication } %>
 <section class="single-post">
     <div class="container">
         <div class="row">
@@ -9,8 +8,11 @@
                 <div class="post-content"><h1><%= publication.title %></h1></div>
                 <div class="post-content">
                     <%= publication.content %>
-                </div>                
+                </div>
             </div>
         </div>
+        <% if !publication.sold? && publication.author.id != current_individual.id %>
+          <%= render 'shared/payment_form', { publication: publication } %>
+        <% end %>
     </div>
 </section>
