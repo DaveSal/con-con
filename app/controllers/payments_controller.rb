@@ -19,9 +19,8 @@ class PaymentsController < ApplicationController
 
     publication.sold!(current_individual)
 
-    flash[:notice] = "Поздравляем! Все права на статью <strong>\"#{publication.title}\"</strong> теперь принадлежат вам."
-
     redirect_to profile_path
+    flash[:success] = "Поздравляем! Все права на статью <strong>\"#{publication.title}\"</strong> принадлежат вам."
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to payments_path(publication: publication.id)

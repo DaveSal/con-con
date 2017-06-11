@@ -17,3 +17,13 @@
 .check-button {
   width: 20px;
 }
+
+.notif {
+  font-size: 1.5em;
+  background-color: lightgreen;
+  color: #ffffff;
+  position: relative;
+  top: 75px;
+  height: 163px;
+  line-height: 85px;
+}

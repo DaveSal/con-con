@@ -13,7 +13,9 @@ class PublicationsController < ApplicationController
 
     if @publication.save
       redirect_to @publication
+      flash[:success] = 'Вы успешно создали публикацию'
     else
+      flash.now[:error] = 'Не удалось создать публикацию'
       render 'new' 
     end
   end
