@@ -5,6 +5,7 @@
 //= require wow.min.js
 //= require slider.js
 //= require jquery.fancybox.js
-//= require custom.js
 //= require froala_editor.min.js
+//= require bootstrap-filestyle
+//= require custom.js
 //= require_tree .

@@ -12,9 +12,6 @@
                 <%= "#{publication.author.first_name} #{publication.author.last_name}"%>
             </span>
         </div>
-        <p>
-            <%= publication.content %>
-        </p>
         <a href="<%= publication_path(publication.id)%>" class="btn btn-dafault btn-details">Читать подробнее</a>
         <% if !publication.sold? && publication.author.id != current_individual.id %>
           <div style="float:right;margin-top:20px"><%= render 'shared/payment_form', { publication: publication } %></div>

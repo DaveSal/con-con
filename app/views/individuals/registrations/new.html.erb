@@ -32,11 +32,6 @@
                             <%= f.text_area :about, class: 'form-control', placeholder: 'О себе', autofocus: true %>
                         </div>
 
-                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
-                           <%= f.file_field :image %>
-
-                        </div>
-
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
                           <%= f.password_field :password, class: 'form-control', placeholder: 'Пароль', autofocus: false %>
                         </div>
@@ -45,9 +40,14 @@
                           <%= f.password_field :password, class: 'form-control', placeholder: 'Подтверждение пароля', autofocus: false %>
                         </div>
 
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                           <%= f.file_field :image, class: 'filestyle', data: { classButton: 'btn btn-primary', input: 'false', buttonText: 'Добавить аватар', classIcon: 'icon-camera' } %>
+
+                        </div>
+
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
                           <%= f.check_box :seller, class: 'form-control', autofocus: false %>
-                          <%= f.label :seller, 'Буду продавать', autofocus: false %>
+                          <%= f.label :seller, 'Я планирую продавать публикации', autofocus: false %>
                         </div>
 
                         <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
