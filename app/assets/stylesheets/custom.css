@@ -13,3 +13,7 @@
 .author-bio > h3 {
   text-align: center;
 }
+
+.check-button {
+  width: 20px;
+}
