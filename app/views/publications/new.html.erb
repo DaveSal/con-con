@@ -16,13 +16,21 @@
                         </div>
 
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
-                            <%= f.text_field :price, class: 'form-control', placeholder: 'Стоимость', autofocus: true %>
-                        </div>           
-                        
+                            <%= f.label :price, 'Стоимость' %>
+                            <%= f.text_field :price, class: 'form-control', placeholder: 'В $', autofocus: true %>
+                            <div class="fee-info-block">
+                              <p style="font-size: 13px;font-family: 'Roboto', sans-serif;color: #555;">Коммисия сервиса составляет <strong class="application-fee">10%</strong>, коммисия платежной системы Stripe <strong class="stripe-fee">2.9% + 30¢</strong></p>
+                            </div>
+                            <div class="fee-block" style="display: none;">
+                              <p style="font-size: 13px;font-family: 'Roboto', sans-serif;color: #555;">Коммисия сервиса составит <strong class="application-fee"></strong>, коммисия Stripe <strong class="stripe-fee"></strong></p>
+                              <p>В случае успешной продажи вы получаете <strong class="price-total"></strong></p>
+                            </div>
+                        </div>
+
                         <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
                             <%= f.submit 'Загрузить публикацию', class: 'btn btn-default btn-send' %>
-                        </div>                      
-                        
+                        </div>
+
                       <% end %>
                   </div>
                 </div>
