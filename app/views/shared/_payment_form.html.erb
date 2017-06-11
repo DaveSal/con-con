@@ -3,7 +3,7 @@
           data-key="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>"
           data-amount="<%= publication.price_in_cents %>"
           data-name="<%= publication.title %>"
-          data-description="<%= "ВСТАВИТЬ ИМЯ АВТОРА" %>"
+          data-description="<%= "#{publication.author.first_name} #{publication.author.last_name}" %>"
           data-locale="auto"
           data-email="<%= current_individual.email %>"
           data-panel-label="Оплатить"
